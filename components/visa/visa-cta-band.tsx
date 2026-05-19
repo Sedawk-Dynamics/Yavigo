@@ -44,7 +44,7 @@ export default function VisaCtaBand() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed"
         >
-          Join 120,000+ travelers who trust Yavigo for fast, reliable, and stress-free visa processing.
+          Partner with Yavigo for fast, reliable, and stress-free visa and immigration processing.
         </motion.p>
 
         <motion.div

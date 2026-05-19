@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Yavigo - Apply for Visa',
-  description: 'Get in touch with Yavigo for visa assistance and travel solutions. 24/7 support available.',
+  title: 'Contact Yavigo | B2B Visa & Immigration Partnerships',
+  description: 'Talk to Yavigo about visa and immigration services for your travel agency, corporate, or consultancy. Dedicated specialist support for partners.',
 };
 
 export default function ContactLayout({

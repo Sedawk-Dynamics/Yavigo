@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Can Yavigo guarantee visa approval?',
-    a: 'No visa agent — including us — can guarantee approval, as the final decision rests with the embassy or immigration authority. However, our 95% approval rate reflects the quality of our application preparation, document review, and expert guidance.',
+    a: 'No visa agent — including us — can guarantee approval, as the final decision rests with the embassy or immigration authority. What we offer is rigorous application preparation, document review, and expert guidance from certified visa and immigration specialists.',
   },
   {
     q: 'Is it safe to upload my documents online?',

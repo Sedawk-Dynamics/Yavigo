@@ -15,10 +15,10 @@ const fadeUp = {
 }
 
 const stats = [
-  { icon: CheckCircle, label: '95% Approval Rate' },
+  { icon: CheckCircle, label: 'High Approval Rate' },
   { icon: Clock, label: '48hr Processing' },
   { icon: Shield, label: '100% Secure' },
-  { icon: Star, label: '4.9/5 Rating' },
+  { icon: Star, label: 'Trusted by Partners' },
 ]
 
 export default function VisaHeroSection() {
@@ -49,7 +49,7 @@ export default function VisaHeroSection() {
           {/* Left */}
           <motion.div variants={stagger} initial="hidden" animate="visible">
             <motion.p variants={fadeUp} className="section-label mb-5" style={{ color: 'var(--green-bright)' }}>
-              Trusted by 120,000+ Travelers Worldwide
+              B2B Visa & Immigration Partner
             </motion.p>
 
             <motion.h1
@@ -62,7 +62,7 @@ export default function VisaHeroSection() {
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-lg text-white/70 mb-8 max-w-md leading-relaxed">
-              From eligibility checks to document submission — get expert visa assistance for 180+ destinations, fully online, without the hassle.
+              From eligibility checks to document submission — expert visa and immigration assistance for 100+ destinations, fully online, built for partners.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-10">

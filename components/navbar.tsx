@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Menu, X, Phone, ChevronDown } from "lucide-react"
+import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react"
 
 const navLinks = [
   {
@@ -111,11 +111,12 @@ export default function Navbar() {
               </a>
               <Link href="/contact">
                 <motion.span
-                  whileHover={{ scale: 1.04 }}
+                  whileHover={{ y: -1 }}
                   whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center px-5 py-2.5 bg-green-primary text-white text-sm font-semibold rounded-xl hover:bg-green-dark transition-colors shadow-sm btn-glow cursor-pointer"
+                  className="btn-modern inline-flex items-center gap-2 px-5 py-2.5 bg-green-primary text-white text-sm font-semibold rounded-xl cursor-pointer"
                 >
                   Apply for Visa
+                  <ArrowRight className="btn-arrow w-4 h-4" />
                 </motion.span>
               </Link>
             </div>

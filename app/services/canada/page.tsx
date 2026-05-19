@@ -93,7 +93,7 @@ export default function CanadaVisaPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="relative h-96 rounded-2xl overflow-hidden">
-              <Image src="/images/dest-canada.jpg" alt="Canada" fill className="object-cover" quality={85} />
+              <Image src="/images/dest-canada.jpg" alt="Canada" fill className="object-cover" quality={85} priority />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </motion.div>
           </div>

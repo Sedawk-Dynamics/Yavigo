@@ -5,9 +5,9 @@ import { motion, useInView } from 'framer-motion'
 import { Play, CheckCircle, Globe, Award, Users } from 'lucide-react'
 
 const floatingStats = [
-  { icon: CheckCircle, value: '50K+', label: 'Visas Approved', color: 'bg-green-primary' },
-  { icon: Award, value: '98%', label: 'Approval Rate', color: 'bg-blue-500' },
-  { icon: Globe, value: '180+', label: 'Countries', color: 'bg-orange-500' },
+  { icon: CheckCircle, value: 'B2B', label: 'Partner Network', color: 'bg-green-primary' },
+  { icon: Award, value: 'Expert', label: 'Visa & Immigration', color: 'bg-blue-500' },
+  { icon: Globe, value: '100+', label: 'Countries', color: 'bg-orange-500' },
 ]
 
 const stagger = {
@@ -125,8 +125,8 @@ export default function VisaVideoSection() {
               <div className="w-9 h-9 bg-green-light rounded-xl flex items-center justify-center mb-2">
                 <CheckCircle className="w-5 h-5 text-green-primary" aria-hidden="true" />
               </div>
-              <p className="text-2xl font-bold text-foreground">50K+</p>
-              <p className="text-xs text-muted-foreground">Visas Approved</p>
+              <p className="text-base font-bold text-foreground leading-tight">B2B Partner</p>
+              <p className="text-xs text-muted-foreground">Visa &amp; Immigration</p>
             </motion.div>
           </div>
 
@@ -141,8 +141,8 @@ export default function VisaVideoSection() {
               <div className="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center mb-2">
                 <Award className="w-5 h-5 text-blue-500" aria-hidden="true" />
               </div>
-              <p className="text-2xl font-bold text-foreground">98%</p>
-              <p className="text-xs text-muted-foreground">Approval Rate</p>
+              <p className="text-base font-bold text-foreground leading-tight">Specialist Team</p>
+              <p className="text-xs text-muted-foreground">Certified Experts</p>
             </motion.div>
           </div>
         </motion.div>

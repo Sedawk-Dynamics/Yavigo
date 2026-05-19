@@ -24,11 +24,11 @@ const footerLinks = {
     { label: "Document Assistance", href: "/services" },
     { label: "Fraud Protection", href: "/services" },
   ],
-  "Travel Solutions": [
-    { label: "Flight Booking", href: "/services" },
-    { label: "Travel Insurance", href: "/services" },
-    { label: "Europe Tours", href: "/services" },
-    { label: "24/7 Support", href: "/contact" },
+  "Immigration Services": [
+    { label: "Immigration Advisory", href: "/services" },
+    { label: "Long-Term Visas", href: "/services" },
+    { label: "Corporate Mobility", href: "/services" },
+    { label: "Compliance Support", href: "/services" },
   ],
   Resources: [
     { label: "Blog & Guides", href: "/blog" },
@@ -119,12 +119,12 @@ export default function Footer() {
                 className="h-12 object-contain brightness-110 mb-5"
               />
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
-                Your trusted partner for visa processing and travel solutions. We make international travel simple,
-                secure, and stress-free.
+                Your trusted B2B partner for visa and immigration services. We work with travel agencies,
+                corporates, and consultancies to deliver seamless visa outcomes.
               </p>
 
               {/* Contact info */}
-              <ul className="flex flex-col gap-3 mb-7">
+              <ul className="flex flex-col gap-3 mb-6">
                 <li className="flex items-start gap-3 text-sm text-muted-foreground">
                   <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span>+1 800 000 0000</span>
@@ -134,14 +134,31 @@ export default function Footer() {
                   <span>support@yavigo.com</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span>Available worldwide — 100% online</span>
-                </li>
-                <li className="flex items-start gap-3 text-sm text-muted-foreground">
                   <Globe className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span>www.yavigo.com</span>
                 </li>
               </ul>
+
+              {/* Office locations */}
+              <div className="mb-7">
+                <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-3">Our Offices</p>
+                <ul className="flex flex-col gap-3">
+                  <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span>
+                      <span className="block font-semibold text-foreground">Noida, India</span>
+                      <span className="block text-xs leading-relaxed">Sector 62, Noida, Uttar Pradesh 201301</span>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    <span>
+                      <span className="block font-semibold text-foreground">Netherlands</span>
+                      <span className="block text-xs leading-relaxed">Amsterdam, the Netherlands</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
 
               {/* Social icons */}
               <div className="flex items-center gap-3">

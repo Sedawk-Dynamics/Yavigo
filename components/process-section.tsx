@@ -148,7 +148,7 @@ export default function ProcessSection() {
               Ready to Start Your Journey?
             </h3>
             <p className="text-muted-foreground mb-7 max-w-lg mx-auto">
-              Join 120,000+ travelers who trust Yavigo for seamless visa processing and travel solutions.
+              Partner with Yavigo for seamless visa and immigration processing built for your business.
             </p>
             <motion.a
               href="#apply"

@@ -4,10 +4,10 @@ import { useRef, useEffect, useState } from "react"
 import { motion, useInView } from "framer-motion"
 
 const stats = [
-  { value: 120000, suffix: "+", label: "Happy Travelers", description: "Visas processed successfully" },
-  { value: 50, suffix: "K+", label: "Flights Booked", description: "Domestic & international" },
+  { value: 100, suffix: "+", label: "Countries Covered", description: "Across our visa & immigration network" },
   { value: 98, suffix: "%", label: "Approval Rate", description: "Across all visa types" },
   { value: 72, suffix: "hrs", label: "Avg. Processing", description: "For eligible e-visas" },
+  { value: 10, suffix: "+", label: "Visa Types", description: "From short-stay to long-term immigration" },
 ]
 
 function Counter({
@@ -60,15 +60,15 @@ export default function StatsSection() {
 
   const tickerItems = [
     "Visa Processing",
-    "Flight Bookings",
+    "Immigration Services",
     "E-Visa Services",
     "Schengen Visa",
     "UK Visa",
-    "Travel Insurance",
+    "Corporate Mobility",
     "Document Support",
     "Fraud Detection",
     "Online Submission",
-    "24/7 Support",
+    "Partner Support",
   ]
 
   return (

@@ -35,7 +35,7 @@ const visaTypes = [
       'Standard & expedited processing',
       'Complete documentation support',
       'BRP collection assistance',
-      '24/7 visa status tracking',
+      'Real-time visa status tracking',
     ],
   },
   {
@@ -105,10 +105,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h1 className="text-5xl lg:text-6xl font-bold text-balance mb-4" style={{ color: 'var(--heading-color)' }}>
-              Our Visa Services
+              B2B Visa & Immigration Services
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Comprehensive visa solutions for 180+ destinations. Choose your visa type below to get started.
+              Comprehensive visa and immigration capabilities for 100+ destinations — built for travel partners and corporates.
             </p>
           </motion.div>
         </div>

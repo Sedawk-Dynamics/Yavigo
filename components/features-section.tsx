@@ -22,8 +22,8 @@ const features = [
   },
   {
     icon: HeadphonesIcon,
-    title: "24/7 Expert Support",
-    description: "Our visa experts are available around the clock to answer your questions and guide you through the process.",
+    title: "Dedicated Expert Support",
+    description: "Our visa and immigration specialists are available to answer your questions and guide you through every step of the process.",
   },
   {
     icon: Award,

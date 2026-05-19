@@ -228,7 +228,7 @@ export default function VisaDestinationsSection({ onSelectCountry }: VisaDestina
             className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-green-primary text-green-primary font-semibold rounded-xl hover:bg-green-light transition-all"
             aria-label="View all destinations"
           >
-            View All 180+ Destinations
+            View All 100+ Destinations
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
         </motion.div>

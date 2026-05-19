@@ -1,8 +1,8 @@
-# Yavigo - Premium Visa & Travel Solutions Platform
+# Yavigo - B2B Visa & Immigration Platform
 
 ## Project Overview
 
-Yavigo is a premium, fully-responsive Next.js website for complete visa and travel solutions. The platform features luxury design aesthetics, extensive Framer Motion animations, and a comprehensive set of pages to serve travelers and visa applicants worldwide.
+Yavigo is a fully-responsive Next.js website positioning Yavigo as a B2B visa and immigration partner for travel agencies, corporates, and immigration consultancies. The platform features luxury design aesthetics, extensive Framer Motion animations, and a comprehensive set of pages.
 
 ## Design System
 
@@ -32,7 +32,6 @@ Yavigo is a premium, fully-responsive Next.js website for complete visa and trav
 
 ### 1. Homepage (`/`)
 - **Hero Section**: Parallax background, animated gradient text, search bar, CTA buttons
-- **Stats Section**: Animated counter cards (50K+, 95%, 24/7)
 - **Destinations Showcase**: 5-country grid with hover expand effects
 - **Why Choose Us**: 6-feature grid with benefits
 - **Navbar**: Sticky, scroll-aware with smooth transitions
@@ -45,11 +44,11 @@ Yavigo is a premium, fully-responsive Next.js website for complete visa and trav
 
 Services Include:
 - E-Visa Processing
-- Flight Booking
+- Immigration Services (long-term visas, residency, corporate mobility)
 - Document Support
-- Specialized Europe Tours
+- Europe & UK Visa Specialists
 - Fraud Protection
-- 24/7 Support
+- Dedicated Partner Support
 
 ### 3. Visa Requirements Page (`/visa-requirements`)
 - **Country Accordion**: Expandable list for 6+ countries
@@ -59,7 +58,7 @@ Services Include:
 
 ### 4. About Page (`/about`)
 - **Mission Statement**: Brand purpose and values
-- **Company Stats**: Key metrics (120K+ travelers, 95% success, 180+ countries)
+- **Company Markers**: B2B positioning, certified specialists, 100+ countries, dedicated partner support
 - **Core Values**: Trust & Security, Excellence, Innovation
 - **Founder Message**: Personal connection
 
@@ -278,4 +277,4 @@ Ready to deploy on Vercel with:
 
 **Brand**: Yavigo - "We Serve Happiness"  
 **Mission**: Making international travel simple, secure, and accessible to everyone  
-**Target**: 120,000+ travelers served globally with 95% success rate
+**Target**: Travel agencies, corporates, and immigration consultancies needing a B2B visa & immigration partner

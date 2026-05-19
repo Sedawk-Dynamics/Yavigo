@@ -30,11 +30,11 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 /* ─── 1. STATS BANNER ───────────────────────────────────────── */
 const stats = [
-  { value: "50K+", label: "Visas Processed", icon: Globe },
-  { value: "180+", label: "Countries Covered", icon: Plane },
-  { value: "95%", label: "Approval Rate", icon: Award },
-  { value: "24/7", label: "Expert Support", icon: HeadphonesIcon },
-  { value: "5★", label: "Customer Rating", icon: Star },
+  { value: "B2B", label: "Partner Network", icon: Users },
+  { value: "Global", label: "Countries Covered", icon: Plane },
+  { value: "Expert", label: "Visa & Immigration", icon: Award },
+  { value: "Trusted", label: "Specialist Support", icon: HeadphonesIcon },
+  { value: "5★", label: "Partner Rating", icon: Star },
 ]
 
 export function StatsSection() {
@@ -171,18 +171,18 @@ const services = [
   {
     icon: FileText,
     title: "Visa Application",
-    desc: "End-to-end visa processing for 180+ countries. We handle your entire application with precision.",
+    desc: "End-to-end visa processing for 100+ countries. We handle your entire application with precision.",
     color: "bg-green-light",
     iconColor: "text-green-primary",
     href: "/services",
   },
   {
-    icon: Plane,
-    title: "Flight Booking",
-    desc: "Domestic and international flights at competitive rates. Travel smarter with our booking experts.",
+    icon: Users,
+    title: "Immigration Services",
+    desc: "Long-term visas, residency, and corporate mobility — handled by certified immigration specialists.",
     color: "bg-blue-50",
     iconColor: "text-blue-500",
-    href: "/services#flights",
+    href: "/services",
   },
   {
     icon: Shield,
@@ -210,8 +210,8 @@ const services = [
   },
   {
     icon: HeadphonesIcon,
-    title: "24/7 Support",
-    desc: "Round-the-clock expert assistance via chat, email, and phone. Your journey is always supported.",
+    title: "Dedicated Partner Support",
+    desc: "Specialist account managers for travel agencies, corporates, and consultancies — chat, email, or phone.",
     color: "bg-pink-50",
     iconColor: "text-pink-500",
     href: "/contact",
@@ -234,10 +234,10 @@ export function ServicesSection() {
         >
           <motion.div variants={fadeUp}><SectionLabel>What We Offer</SectionLabel></motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl font-bold mb-4">
-            Complete Travel Solutions
+            B2B Visa & Immigration Services
           </motion.h2>
           <motion.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto">
-            Everything you need for a seamless international journey — from visa to landing.
+            Specialist visa and immigration capabilities built for travel partners, corporates, and consultancies.
           </motion.p>
         </motion.div>
 
@@ -274,7 +274,7 @@ const steps = [
   {
     step: "01",
     title: "Choose Destination",
-    desc: "Select your destination country and visa type from our comprehensive list of 180+ countries.",
+    desc: "Select your destination country and visa type from our comprehensive list of 100+ countries.",
   },
   {
     step: "02",
@@ -363,11 +363,11 @@ export function HowItWorksSection() {
 /* ─── 5. WHY CHOOSE US ──────────────────────────────────────── */
 const reasons = [
   { icon: Zap, title: "Lightning-Fast Approvals", desc: "Most e-visas processed in 48–72 hours with priority queues available." },
-  { icon: Shield, title: "Advanced Fraud Protection", desc: "AI-powered fraud detection ensures your application is safe and compliant." },
-  { icon: Lock, title: "Fully Online Process", desc: "No need to visit offices. Submit everything digitally from your home." },
-  { icon: Users, title: "Dedicated Visa Experts", desc: "Each application is reviewed by certified visa specialists." },
-  { icon: Globe, title: "180+ Countries Covered", desc: "From Schengen to Southeast Asia, we cover virtually every destination." },
-  { icon: HeadphonesIcon, title: "24/7 Live Support", desc: "Our team is always on standby via chat, phone, or email." },
+  { icon: Shield, title: "Advanced Fraud Protection", desc: "AI-powered fraud detection ensures every application is safe and compliant." },
+  { icon: Lock, title: "Fully Online Workflow", desc: "Submit everything digitally — no embassy queues for partner applications." },
+  { icon: Users, title: "Dedicated Visa & Immigration Experts", desc: "Every application is reviewed by certified visa and immigration specialists." },
+  { icon: Globe, title: "100+ Countries Covered", desc: "From Schengen to Southeast Asia, we cover virtually every destination." },
+  { icon: HeadphonesIcon, title: "Dedicated Partner Support", desc: "Specialist account managers for travel and corporate partners — chat, phone, or email." },
 ]
 
 export function WhyChooseUs() {
@@ -473,29 +473,29 @@ const testimonials = [
     name: "Sarah M.",
     country: "🇩🇪 Germany",
     rating: 5,
-    text: "Got my Schengen visa within 12 days. The process was completely online and the support team was incredibly helpful throughout.",
-    role: "Business Traveler",
+    text: "Schengen application came through in just under three weeks. The document checklist was clear up front, which I appreciated — no last-minute surprises.",
+    role: "Applied for Schengen visa",
   },
   {
     name: "James K.",
     country: "🇬🇧 United Kingdom",
     rating: 5,
-    text: "Yavigo made our family vacation stress-free. All documents were handled digitally and we received our visas without any hassle.",
-    role: "Family Traveler",
+    text: "We applied for visas for the four of us through Yavigo. The portal made it easy to track everything in one place. Took about two weeks end to end.",
+    role: "UK visitor visa",
   },
   {
     name: "Priya R.",
     country: "🇦🇪 Dubai",
     rating: 5,
-    text: "The fastest e-visa I've ever received — approved in under 3 days! Transparent pricing and excellent communication.",
-    role: "Frequent Traveler",
+    text: "Got the Dubai e-visa within a few business days. The form was straightforward and someone replied to my email queries the same day.",
+    role: "UAE e-visa",
   },
   {
     name: "Daniel O.",
     country: "🇺🇸 United States",
-    rating: 5,
-    text: "I was worried about the US visa process but Yavigo guided me step-by-step. Approved on the first attempt!",
-    role: "Student Visa",
+    rating: 4,
+    text: "The US process took longer than I expected, but Yavigo helped me prep the DS-160 and walked me through interview prep. Their guidance made the difference.",
+    role: "US B1/B2 visa",
   },
 ]
 
@@ -518,7 +518,7 @@ export function TestimonialsSection() {
             Travelers Love Yavigo
           </motion.h2>
           <motion.p variants={fadeUp} className="text-muted-foreground max-w-xl mx-auto">
-            Don&apos;t just take our word for it — here&apos;s what our 120,000+ happy customers say.
+            Don&apos;t just take our word for it — hear from the partners and applicants we serve.
           </motion.p>
         </motion.div>
 
@@ -692,7 +692,7 @@ export function CtaBand() {
             Your Dream Destination Awaits
           </motion.h2>
           <motion.p variants={fadeUp} className="text-white/80 text-lg mb-10 max-w-xl mx-auto">
-            Join 120,000+ travelers who trusted Yavigo for fast, secure, and hassle-free visa services.
+            Partner with Yavigo for fast, secure, and reliable visa and immigration processing built for your business.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact">

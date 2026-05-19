@@ -153,8 +153,8 @@ export default function ServicesSection() {
             <span className="text-primary">Smooth Journey</span>
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            From visa applications to flight bookings, we offer a comprehensive suite of travel services designed to
-            make your international journey effortless.
+            From short-stay visas to long-term immigration, Yavigo offers a comprehensive suite of B2B services
+            designed for travel partners, corporates, and immigration consultancies.
           </p>
         </motion.div>
 

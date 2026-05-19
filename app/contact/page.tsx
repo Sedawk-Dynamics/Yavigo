@@ -3,8 +3,10 @@
 import Navbar from '@/components/navbar';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
-import { useState } from 'react';
+import { Mail, Phone, MapPin, Send, Loader2, Upload, FileText, X } from 'lucide-react';
+import { useRef, useState } from 'react';
+
+const MAX_PDF_BYTES = 10 * 1024 * 1024; // 10 MB
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
@@ -15,6 +17,9 @@ export default function ContactPage() {
     destination: '',
     message: ''
   });
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
+  const [pdfError, setPdfError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -23,13 +28,50 @@ export default function ContactPage() {
     });
   };
 
+  const handlePdfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPdfError(null);
+    const file = e.target.files?.[0];
+    if (!file) {
+      setPdfFile(null);
+      return;
+    }
+    const isPdfByMime = file.type === 'application/pdf';
+    const isPdfByExt = file.name.toLowerCase().endsWith('.pdf');
+    if (!isPdfByMime && !isPdfByExt) {
+      setPdfError('Only PDF files are accepted.');
+      setPdfFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+    if (file.size > MAX_PDF_BYTES) {
+      setPdfError('PDF must be 10 MB or smaller.');
+      setPdfFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      return;
+    }
+    setPdfFile(file);
+  };
+
+  const clearPdf = () => {
+    setPdfFile(null);
+    setPdfError(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  const formatBytes = (bytes: number) => {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
+    // Simulate form submission (would POST FormData with the PDF attached in a real backend)
     await new Promise(r => setTimeout(r, 2000));
     setLoading(false);
     setFormData({ name: '', email: '', phone: '', destination: '', message: '' });
+    clearPdf();
     alert('Application submitted! We\'ll contact you shortly.');
   };
 
@@ -86,7 +128,7 @@ export default function ContactPage() {
             variants={itemVariants}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            Complete the form below and our team will guide you through the visa application process
+            Talk to Yavigo about visa and immigration partnerships — for your travel agency, corporate, or consultancy.
           </motion.p>
         </motion.div>
 
@@ -95,7 +137,7 @@ export default function ContactPage() {
           {[
             { icon: Phone, title: 'Call Us', content: '+1 (800) 555-0123' },
             { icon: Mail, title: 'Email', content: 'support@yavigo.com' },
-            { icon: MapPin, title: 'Office', content: 'Dubai, London, NYC' }
+            { icon: MapPin, title: 'Partnerships', content: 'partners@yavigo.com' }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -109,6 +151,50 @@ export default function ContactPage() {
             </motion.div>
           ))}
         </div>
+
+        {/* Office locations */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <motion.h2 variants={itemVariants} className="text-2xl font-bold text-foreground mb-6">Our Offices</motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                city: 'Noida, India',
+                line1: 'Sector 62, Noida',
+                line2: 'Uttar Pradesh 201301, India',
+                hours: 'Mon–Sat · 09:30 – 18:30 IST',
+              },
+              {
+                city: 'Amsterdam, Netherlands',
+                line1: 'Amsterdam',
+                line2: 'The Netherlands',
+                hours: 'Mon–Fri · 09:00 – 18:00 CET',
+              },
+            ].map((office) => (
+              <motion.div
+                key={office.city}
+                variants={itemVariants}
+                whileHover={{ y: -4 }}
+                className="p-6 bg-surface-2/80 backdrop-blur-sm border border-green-primary/20 rounded-2xl hover:border-green-primary/50 transition-all"
+              >
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-6 h-6 text-green-primary mt-1 shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{office.city}</h3>
+                    <p className="text-sm text-muted-foreground">{office.line1}</p>
+                    <p className="text-sm text-muted-foreground mb-3">{office.line2}</p>
+                    <p className="text-xs text-muted-foreground">{office.hours}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Main form section */}
         <motion.div
@@ -196,6 +282,52 @@ export default function ContactPage() {
                 />
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Attach Supporting Document (PDF, optional)
+                </label>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  name="document"
+                  accept="application/pdf,.pdf"
+                  onChange={handlePdfChange}
+                  className="sr-only"
+                  id="pdf-upload"
+                />
+                {!pdfFile ? (
+                  <label
+                    htmlFor="pdf-upload"
+                    className="flex flex-col items-center justify-center gap-2 px-4 py-6 bg-surface-1 border-2 border-dashed border-green-primary/30 rounded-lg text-center cursor-pointer hover:border-green-primary/60 hover:bg-surface-1/80 transition-all"
+                  >
+                    <Upload className="w-5 h-5 text-green-primary" />
+                    <span className="text-sm text-foreground font-medium">Click to upload a PDF</span>
+                    <span className="text-xs text-muted-foreground">Max 10 MB · PDF only</span>
+                  </label>
+                ) : (
+                  <div className="flex items-center justify-between gap-3 px-4 py-3 bg-surface-1 border border-green-primary/30 rounded-lg">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <FileText className="w-5 h-5 text-green-primary shrink-0" />
+                      <div className="min-w-0">
+                        <p className="text-sm font-medium text-foreground truncate">{pdfFile.name}</p>
+                        <p className="text-xs text-muted-foreground">{formatBytes(pdfFile.size)}</p>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={clearPdf}
+                      aria-label="Remove attached PDF"
+                      className="p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-surface-2 transition-colors shrink-0"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+                {pdfError && (
+                  <p className="mt-2 text-xs text-red-500" role="alert">{pdfError}</p>
+                )}
+              </div>
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -225,10 +357,10 @@ export default function ContactPage() {
             <div className="space-y-4">
               {[
                 { title: 'Fast Approvals', desc: 'Get visa decisions in days, not weeks' },
-                { title: 'Expert Support', desc: '24/7 dedicated visa specialists' },
+                { title: 'Expert Support', desc: 'Dedicated visa & immigration specialists' },
                 { title: 'Secure Process', desc: 'Advanced fraud detection & data protection' },
                 { title: 'Online Submission', desc: 'No need to physically submit documents' },
-                { title: '180+ Countries', desc: 'We handle visas for destinations worldwide' },
+                { title: '100+ Countries', desc: 'We handle visas for destinations worldwide' },
                 { title: 'Transparent Pricing', desc: 'No hidden fees, competitive rates' }
               ].map((item, i) => (
                 <motion.div

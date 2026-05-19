@@ -1,7 +1,6 @@
 import Navbar from '@/components/navbar'
 import HeroSection from '@/components/hero-section'
 import {
-  StatsSection,
   DestinationsShowcase,
   ServicesSection,
   HowItWorksSection,
@@ -13,10 +12,10 @@ import {
 import Footer from '@/components/footer'
 
 export const metadata = {
-  title: 'Yavigo - Premium Visa Processing Solutions',
+  title: 'Yavigo – B2B Visa & Immigration Processing for Travel Partners',
   description:
-    'Expert visa processing for 180+ destinations. Fast approvals, secure online process, 95% success rate. Get your visa in 30 seconds with Yavigo.',
-  keywords: 'visa application, e-visa, visa processing, passport visa, travel visa',
+    'Yavigo partners with travel agencies, corporates, and immigration consultants to deliver expert visa and immigration processing. Secure online workflows, dedicated specialists.',
+  keywords: 'B2B visa services, immigration services, visa processing partner, e-visa, corporate visa, travel agency visa partner',
 }
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
     <main className="relative min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <StatsSection />
       <DestinationsShowcase />
       <ServicesSection />
       <HowItWorksSection />

@@ -25,7 +25,6 @@ pnpm start
 ```
 Homepage (/)
 ├─ Hero Section with Parallax
-├─ Stats Section (50K+, 95%, 24/7)
 ├─ Destinations Showcase (5 countries)
 ├─ Why Choose Us (6 benefits)
 └─ Navbar & Footer

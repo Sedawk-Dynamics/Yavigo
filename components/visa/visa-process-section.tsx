@@ -12,8 +12,8 @@ const steps = [
     number: '01',
     icon: MapPin,
     title: 'Select Your Destination & Travel Dates',
-    desc: 'Choose your destination country and visa type from our 180+ country database. Set your travel dates and number of travelers.',
-    highlights: ['180+ destinations', 'Multiple visa types', 'Group applications'],
+    desc: 'Choose your destination country and visa type from our 100+ country database. Set your travel dates and number of travelers.',
+    highlights: ['100+ destinations', 'Multiple visa types', 'Group applications'],
     color: 'bg-green-light',
     iconColor: 'text-green-primary',
     borderColor: 'border-green-primary/30',
@@ -156,7 +156,7 @@ export default function VisaProcessSection() {
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </a>
           <p className="text-xs text-muted-foreground mt-3">
-            Takes less than 30 minutes · 95% approval rate · Expert support included
+            Takes less than 30 minutes · Expert visa & immigration support included
           </p>
         </motion.div>
       </div>

@@ -53,7 +53,7 @@ export default function AboutPage() {
             variants={itemVariants}
             className="text-lg text-muted-foreground max-w-2xl mx-auto"
           >
-            We serve happiness by making global travel accessible to everyone
+            Your B2B partner for visa and immigration expertise — built for travel agencies, corporates, and consultancies.
           </motion.p>
         </motion.div>
 
@@ -68,10 +68,10 @@ export default function AboutPage() {
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6 text-foreground">Our Mission</h2>
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              At Yavigo, we believe that international travel should be accessible, hassle-free, and enjoyable for everyone. Our mission is to simplify the visa application process and provide comprehensive travel solutions that empower millions of people to explore the world.
+              At Yavigo, we partner with travel agencies, corporates, and immigration consultants to make visa and immigration outcomes simple, predictable, and compliant. Our mission is to be the most trusted B2B visa and immigration partner in every market we serve.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We combine cutting-edge technology with expert human support to deliver the most reliable visa and travel services in the industry.
+              We combine purpose-built technology with certified visa and immigration specialists to deliver outcomes our partners can confidently stand behind.
             </p>
           </motion.div>
 
@@ -98,10 +98,10 @@ export default function AboutPage() {
           viewport={{ once: true }}
         >
           {[
-            { icon: Users, stat: '120K+', label: 'Travelers Served' },
-            { icon: Award, stat: '95%', label: 'Success Rate' },
-            { icon: Target, stat: '180+', label: 'Countries' },
-            { icon: Heart, stat: '24/7', label: 'Support' }
+            { icon: Users, stat: 'B2B', label: 'Partner-First Model' },
+            { icon: Award, stat: 'Certified', label: 'Visa & Immigration Specialists' },
+            { icon: Target, stat: '100+', label: 'Countries Covered' },
+            { icon: Heart, stat: 'Dedicated', label: 'Partner Support' }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -161,9 +161,9 @@ export default function AboutPage() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Join Thousands of Happy Travelers</h2>
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Partner With Yavigo</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Start your visa application today and explore the world with confidence
+            Bring visa and immigration expertise into your business — talk to our partnerships team.
           </p>
           <motion.a
             href="/contact"

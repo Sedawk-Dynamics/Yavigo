@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Yavigo | Premium Visa & Travel Solutions',
-  description: 'Learn about Yavigo - trusted visa and travel solutions serving 120,000+ travelers worldwide with 95% success rate.',
+  title: 'About Yavigo | B2B Visa & Immigration Partner',
+  description: 'Yavigo is a trusted B2B partner delivering visa and immigration services to travel agencies, corporates, and immigration consultants worldwide.',
 };
 
 export default function AboutLayout({

@@ -16,23 +16,18 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Yavigo – Premium Visa Processing | 180+ Countries',
+  metadataBase: new URL('https://www.yavigo.com'),
+  title: 'Yavigo – B2B Visa & Immigration Services for Travel Partners',
   description:
-    'Expert visa processing for 180+ destinations. Fast approvals, 95% success rate, secure online process. Apply for your visa today with Yavigo.',
+    'Yavigo is a B2B visa and immigration partner for travel agencies, corporates, and immigration consultants. Expert handling, secure online workflows, and dedicated specialist support.',
   keywords:
-    'visa services, visa processing, e-visa, Schengen visa, UK visa, USA visa, Dubai visa, visa application online',
+    'B2B visa services, immigration services, visa processing partner, travel agency visa partner, corporate visa, e-visa, Schengen visa, UK visa, USA visa, Dubai visa',
   generator: 'v0.app',
 
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
-
   openGraph: {
-    title: 'Yavigo – Premium Visa Processing',
+    title: 'Yavigo – B2B Visa & Immigration Services',
     description:
-      'Expert visa processing for 180+ destinations. Fast approvals and secure online applications.',
+      'B2B visa and immigration expertise for travel partners and corporates. Secure online workflows and dedicated specialist support.',
     type: 'website',
     images: ['/favicon.ico'],
   },
