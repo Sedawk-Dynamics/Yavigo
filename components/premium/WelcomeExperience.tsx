@@ -30,12 +30,7 @@ export default function WelcomeExperience() {
 
   useEffect(() => {
     setMounted(true)
-    // Skip full welcome on repeat session
-    if (sessionStorage.getItem("yavigo-welcomed") === "1") {
-      setPhase("companion")
-      return
-    }
-    sessionStorage.setItem("yavigo-welcomed", "1")
+    // Play the full welcome on every visit / refresh
     const t = window.setTimeout(() => setPhase("companion"), 3200)
     return () => window.clearTimeout(t)
   }, [])
