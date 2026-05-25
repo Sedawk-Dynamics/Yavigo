@@ -24,10 +24,13 @@ export default function AmbientParticles({
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduce) return
 
-    const canvas = canvasRef.current
+    const canvas: HTMLCanvasElement | null = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext("2d", { alpha: true })
+    const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d", { alpha: true })
     if (!ctx) return
+    // Local non-null aliases for use inside closures (TS can't narrow through them)
+    const cvs: HTMLCanvasElement = canvas
+    const c: CanvasRenderingContext2D = ctx
 
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5)
     let w = 0
@@ -42,11 +45,11 @@ export default function AmbientParticles({
     function resize() {
       w = window.innerWidth
       h = window.innerHeight
-      canvas.width = Math.floor(w * dpr)
-      canvas.height = Math.floor(h * dpr)
-      canvas.style.width = w + "px"
-      canvas.style.height = h + "px"
-      ctx.scale(dpr, dpr)
+      cvs.width = Math.floor(w * dpr)
+      cvs.height = Math.floor(h * dpr)
+      cvs.style.width = w + "px"
+      cvs.style.height = h + "px"
+      c.scale(dpr, dpr)
       const count = Math.min(Math.max(Math.floor(w * h * density), 28), 90)
       parts = Array.from({ length: count }, () => ({
         x: Math.random() * w,
@@ -61,7 +64,7 @@ export default function AmbientParticles({
 
     function frame() {
       if (!running) return
-      ctx.clearRect(0, 0, w, h)
+      c.clearRect(0, 0, w, h)
       for (const p of parts) {
         p.t += 0.012
         // gentle wave
@@ -84,10 +87,10 @@ export default function AmbientParticles({
         if (p.x < -10) p.x = w + 10
         if (p.x > w + 10) p.x = -10
 
-        ctx.beginPath()
-        ctx.fillStyle = color.replace(/[\d.]+\)$/, `${(0.35 + Math.sin(p.t) * 0.15 + p.a * 0.3).toFixed(3)})`)
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fill()
+        c.beginPath()
+        c.fillStyle = color.replace(/[\d.]+\)$/, `${(0.35 + Math.sin(p.t) * 0.15 + p.a * 0.3).toFixed(3)})`)
+        c.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        c.fill()
       }
       rafRef.current = requestAnimationFrame(frame)
     }

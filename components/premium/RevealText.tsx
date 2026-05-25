@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, ReactNode } from "react"
+import { useRef, ReactNode, ElementType } from "react"
 import { motion, useInView } from "framer-motion"
 
 /**
@@ -21,7 +21,7 @@ export function RevealText({
   once = true,
 }: {
   children: string
-  as?: keyof JSX.IntrinsicElements
+  as?: ElementType
   className?: string
   delay?: number
   stagger?: number
@@ -33,7 +33,7 @@ export function RevealText({
   const words = children.split(" ")
 
   return (
-    <Tag className={className} ref={ref as any}>
+    <Tag className={className} ref={ref as React.Ref<HTMLElement>}>
       {words.map((w, i) => (
         <span
           key={i}
