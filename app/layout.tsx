@@ -2,6 +2,15 @@ import type { Metadata } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import WhatsAppButton from '@/components/whatsapp-button'
+import SmoothScroll from '@/components/premium/SmoothScroll'
+import CustomCursor from '@/components/premium/CustomCursor'
+import ScrollProgress from '@/components/premium/ScrollProgress'
+import AmbientParticles from '@/components/premium/AmbientParticles'
+import FilmGrain from '@/components/premium/FilmGrain'
+import ClickRipple from '@/components/premium/ClickRipple'
+import EasterEggs from '@/components/premium/EasterEggs'
+import MagicTrail from '@/components/premium/MagicTrail'
+import WelcomeExperience from '@/components/premium/WelcomeExperience'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,12 +50,29 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${plusJakarta.variable} scroll-smooth`}
-      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${plusJakarta.variable}`}
+      suppressHydrationWarning
     >
-      <body className="font-sans antialiased bg-background text-foreground">
-        {children}
-        <WhatsAppButton />
+      <body className="font-sans antialiased bg-background text-foreground" suppressHydrationWarning>
+        <SmoothScroll>
+          {/* Atmospheric global layers (behind content) */}
+          <AmbientParticles />
+          <FilmGrain />
+
+          {/* Active overlays */}
+          <ScrollProgress />
+          <MagicTrail />
+          <CustomCursor />
+          <ClickRipple />
+          <EasterEggs />
+          <WelcomeExperience />
+
+          {/* App tree */}
+          {children}
+
+          {/* Floating utilities */}
+          <WhatsAppButton />
+        </SmoothScroll>
       </body>
     </html>
   )

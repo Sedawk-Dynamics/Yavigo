@@ -41,24 +41,32 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-lg shadow-sm border-b border-border"
-            : "bg-white border-b border-border"
+            ? "bg-white/70 backdrop-blur-xl backdrop-saturate-150 shadow-[0_1px_20px_-2px_rgba(0,0,0,0.08)] border-b border-white/40"
+            : "bg-white/95 backdrop-blur-md border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0">
-              <Image
-                src="/images/yavigo-logo.png"
-                alt="Yavigo – We Serve Happiness"
-                width={140}
-                height={44}
-                className="h-10 w-auto object-contain"
-                priority
-              />
+            <Link href="/" className="flex items-center shrink-0 group">
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 320, damping: 22 }}
+                className="relative"
+              >
+                <span className="absolute -inset-2 rounded-2xl bg-green-light opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500" />
+                <Image
+                  src="/images/yavigo-logo.png"
+                  alt="Yavigo – We Serve Happiness"
+                  width={140}
+                  height={44}
+                  className="relative h-10 w-auto object-contain"
+                  priority
+                />
+              </motion.div>
             </Link>
 
             {/* Desktop nav */}
@@ -72,10 +80,12 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-green-primary transition-colors rounded-lg hover:bg-green-light"
+                    className="group/link relative flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-green-primary transition-colors rounded-lg"
                   >
-                    {link.label}
-                    {link.sub && <ChevronDown className={`w-3.5 h-3.5 text-muted-foreground transition-transform duration-200 ${dropdown === link.label ? "rotate-180" : ""}`} />}
+                    <span className="absolute inset-0 rounded-lg bg-green-light opacity-0 group-hover/link:opacity-100 transition-opacity duration-300" />
+                    <span className="relative">{link.label}</span>
+                    {link.sub && <ChevronDown className={`relative w-3.5 h-3.5 text-muted-foreground transition-transform duration-200 ${dropdown === link.label ? "rotate-180" : ""}`} />}
+                    <span className="absolute left-3 right-3 -bottom-0.5 h-0.5 rounded-full bg-green-primary scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left" />
                   </Link>
                   <AnimatePresence>
                     {link.sub && dropdown === link.label && (
